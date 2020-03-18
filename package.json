@@ -1,0 +1,22 @@
+{
+  "name": "cse135-hw4",
+  "version": "1.0.0",
+  "description": "https://cse135-hw3-6edc9.firebaseapp.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorianm7/cse135-hw4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dorianm7/cse135-hw4/issues"
+  },
+  "homepage": "https://github.com/dorianm7/cse135-hw4#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}

@@ -10,6 +10,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         //setUserRole(user, 'admin');
         printUserProfile(user);
         updateGreetingText();
+
     } else {
       // No user is signed in.
     }
