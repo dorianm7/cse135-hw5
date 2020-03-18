@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>dm-HW2</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="http://www.csszengarden.com/217/217.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+        <script src="scripts/reporter.js"></script>
+    </head>
+    <body>
+        <header id="externals-header-container" class="header-container">
+            <!--my name-->
+            <p id="externals-header-title" class="header-title">Dorian Alexis Maldonado</p>
+            <nav id="externals-header-internal-pages" class="page-nav">
+                <ul id="externals-header-nav-list" class="page-nav-list">
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="index.html">Home</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="images.html">Images</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="form.html">Form</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="table_and_lists.html">Table/Lists</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="externals.html">Externals</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="reporter_test.html">Reporter Test</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main id="externals-main-container" class="main-container">
+            <!--main-->
+            <h3>2 pages or page fragments</h3>
+            <h5>Lets read news from some random non-https website</h5>
+            <iframe src="http://thestartmagazine.com/feed/summary"></iframe>
+            <h5>Let's see what's up with MIT's non-https website</h5>
+            <iframe src="http://www.mit.edu/"></iframe>
+            
+            <br>
+            <h3>A remote video</h3> 
+            <video src="http://mirror.cessen.com/blender.org/peach/trailer/trailer_1080p.ogg" controls height="200" width="300"></video>
+
+            <br>
+            <br>
+
+            <h3>3 images from remote locations</h3>
+            <img src="https://grubbyspoke.com/wp-content/uploads/2018/01/GrubbysPokeLogo-crop-486.png" 
+                alt="Grubby's Poke & Fish Market Logo">
+            <img src="https://www.residentadvisor.net/images/events/flyer/2020/3/us-0327-1369308-1602638-front.jpg" 
+                alt="B-Side Los Angeles 5 year anniversary flier"> 
+            <img src="https://images.squarespace-cdn.com/content/54ecc3a8e4b02904f4e1a0a2/1500037892478-LVIKYXF05E1HQP04ZG3N/The+White+Peach+Emblem+%28WEBSITE%29.png?format=1500w&content-type=image%2Fpng"
+                alt="White Peach Records logo">
+
+
+            <!--2 Scripts from two different locations-->
+            <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script>
+            <script type="module">
+            import {
+                Draggable,
+                Point2DSpring,
+                Tossable,
+                combineStyleStreams,
+                getPointerEventStreamsFromElement,
+            } from "https://ajax.googleapis.com/ajax/libs/material-motion/0.1.0/material-motion.bundle.js";
+            </script> 
+
+            <br>
+
+            <h3>5 links to other sites</h3>
+            <a href="https://www.amazon.com">Amazon</a>
+            <a href="https://www.google.com">Google</a>
+            <a href="https://www.twitter.com">Twitter</a>
+            <a href="https://www.github.com">GitHub</a>
+            <a href="https://www.npr.org">NPR</a>
+
+            <br>
+
+            <h3>Font from another location</h3>
+            <p id="externals-font-from-elsewhere">The</p>
+
+
+            <h3>10 page load times readings</h3>
+            <ol>
+                <li>1/21/20 6:30 Load: 2.28s DOMContentLoaded: 956ms (First time opening the page)</li>
+                <li>1/21/20 6:42 Load: 671ms DOMContentLoaded: 645ms (Pressing reload)</li>
+                <li>1/21/20 6:45 Load: 504ms DOMContentLoaded: 443ms (Pressing reload)</li>
+                <li>1/21/20 6:51 Load: 474ms DOMContentLoaded: 428ms (Pressing reload)</li>
+                <li>1/21/20 6:52 Load: 504ms DOMContentLoaded: 477ms (Pressing reload)</li>
+                <li>1/21/20 6:54 Load: 435ms DOMContentLoaded: 423ms (Moved from index.html back to externals.html)</li>
+                <li>1/21/20 6:56 Load: 442ms DOMContentLoaded: 433ms (Pressing reload)</li>
+                <li>1/21/20 6:58 Load: 414ms DOMContentLoaded: 403ms (Pressing reload)</li>
+                <li>1/21/20 7:00 Load: 435ms DOMContentLoaded: 426ms (Pressing reload)</li>
+                <li>1/21/20 7:02 Load: 410ms DOMContentLoaded: 401ms (Pressing reload)</li>
+            </ol>
+            Throughout these runs, the css that I linked from a different part of the web was "blocked:mixed-content"
+            <br>
+            The video that I put in my website isn't set to autoplay.
+            <br>
+            These readings were taken before I removed the height="50%" and width="50%" from the images from remote locations.
+            
+
+
+            <p id="externals-js-on-test-p" class="test-js-on-p test-javascript-on"></p>
+            <table>
+                <tr>
+                    <td class="test-images">
+                        <img id="externals-images-on-image" class="test-image-on" src="img/bacteria-outline.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="static-css-on">
+                        <img id="externals-css-on-image" class="test-css-on" src="img/bacteria-outline.png" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            
+            <script src="scripts/main.js"></script>
+        </main>
+
+        <footer id="externals-footer-container" class="footer-container">
+             <nav id="externals-footer-internal-pages" class="page-nav">
+                <ul id="externals-footer-nav-list" class="page-nav-list">
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="index.html">Home</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="images.html">Images</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="form.html">Form</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="table_and_lists.html">Table/Lists</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="externals.html">Externals</a></li>
+                </ul>
+            </nav>
+            <br>
+            Dorian Alexis Maldonado &copy; Copyright 2020
+            <address id="email">
+                <a href="mailto:fake@123.com">my@email.com</a>
+            </address>
+
+            <script src="scripts/main.js"></script>
+        </footer>
+    </body>
+
+</html>

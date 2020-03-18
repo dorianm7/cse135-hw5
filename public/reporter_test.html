@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>dm-HW2</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="scripts/reporter.js"></script>
+    </head>
+    <body>
+        <header id="index-header-container" class="header-container">
+            <!--my name-->
+            <p id="reporter-test-header-title" class="header-title">Dorian Alexis Maldonado</p>
+            <nav id="reporter-test-header-internal-pages" class="page-nav">
+                <ul id="reporter-test-header-nav-list" class="page-nav-list">
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="index.html">Home</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="images.html">Images</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="form.html">Form</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="table_and_lists.html">Table/Lists</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="externals.html">Externals</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="reporter_test.html">Reporter Test</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <input type="button" id="purge-button" name="purge-button" value="Purge Local Storage">
+
+            <!-- Static Data Table (Collected once unless the data has changed) -->
+            <table>
+                <caption>Static Data Table</caption>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <th scope="col" class="static-data-header">Value</th>
+                        <th scope="col" class="static-data-header">Time</th>
+                        <th scope="col" class="static-data-header">URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="static-user-agent-string-row">
+                        <th scope="row">User Agent String</th>
+                        <td id="static-user-agent-string">user-agent-string</td>
+                        <td id="static-user-agent-string-time" class="reporter-time">00:00UTC</td>
+                        <td id="static-user-agent-string-url" class="reporter-url">www.text.com</td>
+                    </tr>
+                    
+                    <tr id="static-user-language-row">
+                        <th scope="row">User Language</th>
+                        <td id="static-user-language">user-language</td>
+                        <td id="static-user-language-time" class="reporter-time">00:00UTC</td>
+                        <td id="static-user-language-url" class="reporter-url">www.text.com</td>
+                    </tr>
+                    
+                    <tr id="static-cookies-on-row">
+                        <th scope="row">Cookies On</th>
+                        <td id="static-cookies-on"></td>
+                        <td id="static-cookies-on-time" class="reporter-time">00:00UTC</td>
+                        <td id="static-cookies-on-url" class="reporter-url">www.text.com</td>
+                    </tr>
+                    
+                    <tr id="static-javascript-on-row">
+                        <th scope="row">Javascript On</th>
+                        <td id="static-javascript-on" class="test-javascript-on">
+                            <noscript>
+                                <p id="reporter-js-on-test-p" class="test-js-on-p">false</p>
+                            </noscript>
+                        </td>
+                        <td id="static-javascript-on-time" class="reporter-time">00:00UTC</td>
+                        <td id="static-javascript-on-url" class="reporter-url">www.text.com</td>
+                    </tr>
+
+                    <tr id="static-images-on-row">
+                        <th scope="row">Images On</th>
+                        <td id="static-images-on" class="test-images">
+                            <img id="images-on-image" class="test-image-on" src="img/bacteria-outline.png" alt="">
+                        </td>
+                        <td id="static-images-on-time" class="reporter-time">00:00UTC</td>
+                        <td id="static-images-on-url" class="reporter-url">www.text.com</td>
+                    </tr>
+
+                    <tr id="static-css-on-row">
+                        <th scope="row">CSS On</th>
+                        <td id="static-css-on">
+                            <img id="css-on-image" class="test-css-on" src="img/bacteria-outline.png" alt="">
+                        </td>
+                        <td id="static-css-on-time" class="reporter-time">00:00UTC</td>
+                        <td id="static-css-on-url" class="reporter-url">www.text.com</td>
+                    </tr>
+
+                    <tr id="static-avail-screen-dim-row">
+                        <th scope="row">Available Screen Dimensions</th>
+                        <td id="static-avail-screen-dim"></td>
+                        <td id="static-avail-screen-dim-time" class="reporter-time">00:00UTC</td>
+                        <td id="static-avail-screen-dim-url" class="reporter-url">www.text.com</td>
+                    </tr>
+
+                    <tr id="static-window-size-row">
+                        <th scope="row">Window Size</th>
+                        <td id="static-window-size"></td>
+                        <td id="static-window-size-time" class="reporter-time">00:00UTC</td>
+                        <td id="static-window-size-url" class="reporter-url">www.text.com</td>
+                    </tr>
+
+                    <tr id="static-effective-connection-type-row">
+                        <th scope="row">Effective Connection Type</th>
+                        <td id="static-effective-connection-type"></td>
+                        <td id="static-effective-connection-type-time" class="reporter-time">00:00UTC</td>
+                        <td id="static-effective-connection-type-url" class="reporter-url">www.text.com</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <!-- Performance Data Table (Collected Every Page Load) -->
+            <table>
+                <caption>Performance Data Table</caption>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <th scope="col" class="perf-data-header">Value</th>
+                        <!-- <th scope="col" class="perf-data-header">Time</th> -->
+                        <!-- <th scope="col" class="perf-data-header">URL</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="perf-nav-start-row">
+                        <th scope="row">Navigation Start</th>
+                        <td id="perf-nav-start">value</td>
+                        <!-- <td id="perf-sumn-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-sumn-url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+
+                    <tr id="perf-unload-event-start-row">
+                        <th scope="row">Unload Event Start</th>
+                        <td id="perf-unload-event-start">value</td>
+                        <!-- <td id="perf-unload-event-start-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-unload-event-start-url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                    
+                    <tr id="perf-unload-event-end-row">
+                        <th scope="row">Unload Event End</th>
+                        <td id="perf-unload-event-end">value</td>
+                        <!-- <td id="perf-unload-event-end-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-unload-event-end-url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+
+                    <tr id="perf-redirect-start-row">
+                        <th scope="row">Redirect Start</th>
+                        <td id="perf-redirect-start">value</td>
+                        <!-- <td id="perf-redirect-start-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-redirect-start-url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+
+                    <tr id="perf-redirect-end-row">
+                        <th scope="row">Redirect End</th>
+                        <td id="perf-redirect-end">value</td>
+                        <!-- <td id="perf-redirect-end-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-redirect-end-url" class="reporter-url">www.text.com</td> -->
+                    </tr>  
+
+                    <tr id="perf-fetch-start-row">
+                        <th scope="row">Fetch Start</th>
+                        <td id="perf-fetch-start">value</td>
+                        <!-- <td id="perf-fetch-start-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-fetch-start-url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                
+                    <tr id="perf-domain-lookup-start-row">
+                        <th scope="row">Domain Lookup Start</th>
+                        <td id="perf-domain-lookup-start">value</td>
+                        <!-- <td id="perf-domain-lookup-start-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-domain-lookup-start-url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+
+                    <tr id="perf-domain-lookup-end-row">
+                        <th scope="row">Domain Lookup End</th>
+                        <td id="perf-domain-lookup-end">value</td>
+                        <!-- <td id="perf-domain-lookup-end-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-domain-lookup-end-url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+
+                    <tr id="perf-connect-start-row">
+                        <th scope="row">Connect Start</th>
+                        <td id="perf-connect-start">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+
+                    <tr id="perf-connect-end-row">
+                        <th scope="row">Connect End</th>
+                        <td id="perf-connect-end">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                
+                    <tr id="perf-secure-connection-start-row">
+                        <th scope="row">Secure Connection Start</th>
+                        <td id="perf-secure-connection-start">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                
+                    <tr id="perf-request-start-row">
+                        <th scope="row">Request Start</th>
+                        <td id="perf-request-start">value</td>
+                        <!-- <td id="perf-request-start-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-request-start-url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                
+                    <tr id="perf-response-start-row">
+                        <th scope="row">Response Start</th>
+                        <td id="perf-response-start">value</td>
+                        <!-- <td id="perf-response-start-time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf-response-start-url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                
+                    <tr id="perf-response-end-row">
+                        <th scope="row">Response End</th>
+                        <td id="perf-response-end">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>               
+                    
+                    <tr id="perf-dom-loading-row">
+                        <th scope="row">DOM Loading</th>
+                        <td id="perf-dom-loading">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>              
+                    
+                    <tr id="perf-dom-interactive-row">
+                        <th scope="row">DOM Interactive</th>
+                        <td id="perf-dom-interactive">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                    
+                    <tr id="perf-dom-content-loaded-event-start-row">
+                        <th scope="row">DOM Content Loaded Event Start</th>
+                        <td id="perf-dom-content-loaded-event-start">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                    
+                    <tr id="perf-dom-content-loaded-event-end-row">
+                        <th scope="row">DOM Content Loaded Event End</th>
+                        <td id="perf-dom-content-loaded-event-end">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                    
+                    <tr id="perf-dom-complete-row">
+                        <th scope="row">DOM Complete</th>
+                        <td id="perf-dom-complete">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+                    
+                    <tr id="perf-load-event-start-row">
+                        <th scope="row">Load Event Start</th>
+                        <td id="perf-load-event-start">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+
+                    <tr id="perf-load-event-end-row">
+                        <th scope="row">Load Event End</th>
+                        <td id="perf-load-event-end">value</td>
+                        <!-- <td id="perf--time" class="reporter-time">00:00UTC</td> -->
+                        <!-- <td id="perf--url" class="reporter-url">www.text.com</td> -->
+                    </tr>
+
+
+
+
+
+
+
+
+
+                </tbody>
+            </table>
+
+        </main>
+
+        <footer id="reporter-test-footer-container" class="footer-container">
+            <nav id="reporter-test-footer-internal-pages" class="page-nav">
+                <ul id="reporter-test-footer-nav-list" class="page-nav-list">
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="index.html">Home</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="images.html">Images</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="form.html">Form</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="table_and_lists.html">Table/Lists</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="externals.html">Externals</a></li>
+                </ul>
+            </nav>
+
+            <br>
+            Dorian Alexis Maldonado &copy; Copyright 2020
+            <address id="email">
+                <a href="mailto:fake@123.com">my@email.com</a>
+            </address>
+            
+            <script src="scripts/main.js"></script>
+        </footer>
+
+    </body>
+</html>

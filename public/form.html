@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>dm-HW2</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="scripts/reporter.js"></script>
+    </head>
+    <body> 
+        <header id="form-header-container" class="header-container">
+            <p id="form-header-title" class="header-title">Dorian Alexis Maldonado</p>
+            <nav id="form-header-internal-pages" class="page-nav">
+                <ul id="form-header-nav-list" class="page-nav-list">
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="index.html">Home</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="images.html">Images</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="form.html">Form</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="table_and_lists.html">Table/Lists</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="externals.html">Externals</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="reporter_test.html">Reporter Test</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main id="form-main-container" class="main-container">
+            <!--main-->
+            <h1>Dorian's Shopping Store Emporium</h1>
+            <form id="whole-form" action="http://httpbin.org/post"method="POST">
+                <label>
+                    Please enter your name
+                    <input type="text" name="name" required autofocus tabindex="0">
+                </label>
+
+                <br>
+
+                <label>
+                    Please enter your birth month
+                    <input type="month" name="birth-month">
+                </label>
+ 
+                <br>
+                
+                <label>
+                    Please enter your email
+                    <input type="email" name="email" required>
+                </label>
+
+               <br>
+
+                <label>
+                    Please enter your password
+                    <input type="password" name="password" required>
+                </label>
+
+                <br>
+
+                <label>
+                    Please enter your Facebook URL
+                    <input type="url" name="facebook-url">
+                </label>
+
+                <br>
+
+                <label>
+                    Upload a picture of yourself to confirm your identity
+                    <input type="file" name="id-picture" multiple>
+                </label>
+
+                <br>
+
+                <label>
+                    Press your favorite button
+                    <input type="button" name="fav-button-1" value="1">
+                    <input type="button" name="fav-button-2" value="2">
+                    <input type="button" name="fav-button-3" value="3">
+                </label>
+
+                <br>
+                <label for="item">Item to buy</label>
+                <select name="item" id="item">
+                    <option value="none">Choose an option</option>
+                    <option value="dino-toy">Dinosaur Toy</option>
+                    <option value="left-shoe">Men's left shoe</option>
+                    <option value="paper-towels">Paper Towels</option>
+                    </select>
+                <br>
+
+                <label>
+                    Color you would like for item?
+                    <input type="color" name="color-item">
+                </label>
+
+                <br>
+
+                <label>
+                    When would you like your item delivered?
+                    <input type="date" name="delivery-date">
+                </label>
+
+                <br>
+                
+                <label>
+                    Quantity of your item
+                    <input type="number" name="quantity">
+                </label>
+                
+                <br>
+
+                <label>
+                    Best offer for this item
+                    <input type="range" min="0" max="99999" name="bestin"
+                            oninput="bestout.value=parseInt(bestin.value)">
+                    <output name="bestout" for="best">0</output> 
+                </label>
+                
+                <br>
+
+                <label for="user-currency">Choose your currency</label>
+                <input list="currencies" id="user-currency" name="user-currency">
+                <datalist id="currencies">
+                    <option value="British Pound Sterling"></option>
+                    <option value="US Dollar"></option>
+                    <option value="Mexican Peso"></option>
+                </datalist>
+
+                <br>
+
+                <input type="text" readonly value="Just some motivation to keep you going with this form" size="50"
+                    title="motivation-for-user-to-keep-going" disabled>
+
+                <br>
+                
+                <fieldset>
+                    <legend>Which gum is better?</legend>
+                        <label for="trident">
+                            Trident
+                            <input type="checkbox" id="trident">
+                        </label>
+                        <label for="hubba-bubba">
+                            Hubba-bubba
+                            <input type="checkbox" id="hubba-bubba" checked>
+                        </label>
+                </fieldset>
+
+                <label>My phone's battery life</label>
+                <meter min="0" max="100" low="20" high="80" optimum="50" value="10">at 1/100</meter>
+               
+                <br>
+
+                <label>Your form progress</label>
+                <progress max="100" value="50"></progress>
+            
+                <br>
+
+                <label>Favorite vehicle</label>
+                <select>
+                    <optgroup label="Ford">
+                        <option>Mustang</option>
+                        <option>F-150</option>
+                    </optgroup>
+                    <optgroup label="Toyota">
+                        <option>86</option>
+                        <option>Tundra</option>
+                    </optgroup>
+                </select>
+             
+                <br>
+
+                <label>
+                    Something hidden here. Shhhhh
+                    <input type="hidden" value="You done it" name="hidden-input">
+                </label>
+
+                <br>
+
+                <label>
+                    Are you sure you want to submit?
+                    <input type="checkbox" name="sure-submit-yes">Yes
+                    <input type="checkbox" name="sure-submit-no">No
+                </label>
+
+                <br>
+
+                <label>
+                    Enter something you would've liked to search for
+                    <input type="search" autocomplete="name">
+                </label>
+
+                <br>
+
+                <label>
+                    Were you satisfied with Dorian's Shopping Emporium order form?
+                    <input type="radio" name="satisfaction" value="yes">Good
+                    <input type="radio" name="satisfaction" value="not-really">Not really
+                    <input type="radio" name="satisfaction" value="absolutely">Absolutely
+                </label>
+
+                <br>
+
+                <textarea name="textarea" >Tell me how you feel</textarea>
+
+                <br>
+                
+                <label>
+                    What is today's date?
+                    <input type="datetime-local" maxlength="10" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))"
+                            placeholder="mm/dd/yyyy">
+                </label>
+
+                <br>
+
+                <label>
+                    Time of submission
+                    <input type="time" name="time-submit">
+                </label>
+
+                <br>
+
+                <label>
+                    Week of submission
+                    <input type="week" name="week-submit">
+                </label>
+                
+                <br>
+
+                <input type="submit" name="submit">
+                <input type="image" name="fave-icon-bacteria" src="img/bacteria-outline.png" alt="Bacteria icon">
+
+                <br>
+                <input type="reset" name="reset">
+            </form>
+
+            <br>
+
+            <button type="button">Do nothing button</button>
+
+            
+            <p id="form-js-on-test-p" class="test-js-on-p test-javascript-on"></p>
+            <table>
+                <tr>
+                    <td class="test-images">
+                        <img id="form-images-on-image" class="test-image-on" src="img/bacteria-outline.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="static-css-on">
+                        <img id="form-css-on-image" class="test-css-on" src="img/bacteria-outline.png" alt="">
+                    </td>
+                </tr>
+            </table>
+        </main>
+
+        <footer id="form-footer-container" class="footer-container">
+             <nav id="form-footer-internal-pages" class="page-nav">
+                <ul id="form-footer-nav-list" class="page-nav-list">
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="index.html">Home</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="images.html">Images</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="form.html">Form</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="table_and_lists.html">Table/Lists</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="externals.html">Externals</a></li>
+                </ul>
+            </nav>
+            
+            <br>
+            Dorian Alexis Maldonado &copy; Copyright 2020
+            <address id="email">
+                <a href="mailto:fake@123.com">my@email.com</a>
+            </address>
+
+            <script src="scripts/main.js"></script>
+        </footer>
+    </body>
+
+</html>

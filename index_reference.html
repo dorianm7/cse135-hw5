@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>dm-HW4</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="scripts/reporter.js"></script>
+
+    </head>
+    <body>
+        <!--Link main.js to show a simple script inclusion-->
+
+        <header id="index-header-container" class="header-container">
+            <!--my name-->
+            <p id="index-header-title" class="header-title">Dorian Luis</p>
+            <nav id="index-header-internal-pages" class="page-nav">
+                <ul id="index-header-nav-list" class="page-nav-list">
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="index.html">Home</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="images.html">Images</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="form.html">Form</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="table_and_lists.html">Table/Lists</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="externals.html">Externals</a></li>
+                    <li class="page-nav-list-item"><a class="header-page-nav-list-item-link" href="reporter_test.html">Reporter Test</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="index-main-container" class="main-container">
+            <div id="index-about-me-container" class="main-div-container">
+                <img id="index-self" class="center" src="img/self.jpg" alt="A picture of the website maker">
+                <nav id="index-main-external-links" class="external-links nav center">
+                    <ul id="index-body-external-links" class="external-links-list">
+                        <li class="external-links-list-item">
+                            <a id="external-links-list-linkedin-link" class="external-links-list-item-link" href="https://www.linkedin.com/in/dorian-maldonado/">
+                                <img class="external-links-icons" src="img/linkedin.png" alt="LinkedIn icon">
+                            </a>
+                        </li>
+                        <li class="external-links-list-item">
+                            <a id="external-links-list-github-link" class="external-links-list-item-link" href="https://github.com/dorianm7">
+                                <img class="external-links-icons" src="img/github-circle.png" alt="GitHub icon">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+
+                <!-- TESTING BUTTONS -->
+        <button id="index-test-button" onclick="window.open('https://us-central1-cse135-hw3-6edc9.cloudfunctions.net/helloWorld')">Go to Firebase Page</button>
+        <br>
+        <input type="Text" id="test-text-save" />
+        <button id="index-test-save-button">Save</button>
+                <!-- TESTING BUTTONS -->
+
+
+
+                <section id="index-about-me-section" class="about-me-section">
+                    <h2>About Me</h2>
+                    <p>Born and raised in Oceanside, CA. I'm a 4th year CS major and transferred over from MiraCosta College.</p>
+                </section>
+            </div>
+
+            <hr>
+
+            <div id="index-main-interests-container" class="main-div-container">
+
+                <h1>Interests</h1>
+                <section id="index-interests-music" class="index-interests">
+                    <h2>Music</h2>
+                    <p>I listen to tons of music. The main genres I listen to are Deep Dubstep and Hip-Hop/Rap.</p>
+                    <h3 class="index-h3">A couple songs worth listening to:</h3>
+                    <ul>
+                        <li>Jaden Smith - SOHO</li>
+                        <li>Leo James - Speak Back feat. Shanee (Egoless Remix)</li>
+                        <li>Daughter - Shallows</li>
+                        <li>Joey Bada$$ - AMERIKKKAN IDOL</li>
+                        <li>JMSN - Something</li>
+                        <li>EVA808 - Bladed</li>
+                    </ul>
+                </section>
+                <section id="index-interests-volunteering" class="index-interests">
+                    <h2>Volunteering</h2>
+                    <p>I like to volunteer whenever I can. I am part of the club Tritons For Sally Ride Science where we advocate for STEAM outreach. 
+                        I have volunteered many times at different elementary schools in the San Diego regions. Volunteering is something that helps 
+                        feed my soul and keep me motivated.</p>
+                </section>
+            </div>
+
+            <hr>
+
+            <h1>Favorites</h1>
+            <div id="div-favorites">
+                <h2>Ascii Art</h2>
+                <pre id="index-fav-ascii-art">k|:)</pre>
+
+                <h2>Code Snippet</h2>
+                <pre><code id="index-fav-code-snippet">private static void rangeCheck(int arrayLen, int fromIndex, int toIndex {
+    if (fromIndex > toIndex)
+            throw new IllegalArgumentException("fromIndex(" + fromIndex +
+                ") > toIndex(" + toIndex+")");
+    if (fromIndex &lt; 0) 
+            throw new ArrayIndexOutOfBoundsException(fromIndex);
+    if (toIndex > arrayLen) 
+            throw new ArrayIndexOutOfBoundsException(toIndex);
+}</code></pre>
+                <br>
+                If you're not familiar, this is the snippet of code that Google <i>allegedly</i> stole from Oracale.
+                <h2>Joke</h2>
+                <details>
+                    <summary>Why do links turn purple after you read them?</summary>
+                    Because blue + <em>"read"</em> equals purple
+                </details>
+            </div> 
+
+
+            <p id="index-js-on-test-p" class="test-js-on-p test-javascript-on"></p>
+            <table>
+                <tr>
+                    <td class="test-images">
+                        <img id="index-images-on-image" class="test-image-on" src="img/bacteria-outline.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="static-css-on">
+                        <img id="index-css-on-image" class="test-css-on" src="img/bacteria-outline.png" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <script src="scripts/main.js"></script>
+        </main>
+
+        <hr>
+
+        <footer id="index-footer-container" class="footer-container">
+             <nav id="index-footer-internal-pages" class="page-nav">
+                <ul id="index-footer-nav-list" class="page-nav-list">
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="index.html">Home</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="images.html">Images</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="form.html">Form</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="table_and_lists.html">Table/Lists</a></li>
+                    <li class="page-nav-list-item"><a class="footer-page-nav-list-item-link" href="externals.html">Externals</a></li>
+                </ul>
+            </nav>
+
+            <br>
+            Dorian Alexis Maldonado &copy; Copyright 2020
+            <address id="email">
+                <a href="mailto:fake@123.com">my@email.com</a>
+            </address>
+
+            <script src="scripts/main.js"></script>
+
+
+        </footer>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+   
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <!-- <script src="/__/firebase/7.7.0/firebase-app.js"></script> -->
+     
+        <!-- Use Firebase Firestore -->
+        <script src="/__/firebase/7.8.2/firebase-firestore.js"></script>
+
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script> 
+
+        <script src="test_save.js"></script>
+    </body>
+
+</html>

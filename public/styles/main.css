@@ -1,0 +1,238 @@
+/* Should include:
+    font inclusion
+    text styles (italic, bold, underline, code style)
+    colors (foreground background)
+    background image
+    borders, padding, margin (think captions or image)
+    alignment (center, right flush, justify)
+    basic layout using Flexbox or CSS grid (dont use absolute positioning for this)
+    */
+
+
+/****************************************** GENERAL *****************************************/
+* {
+    /* border: 1px solid black; */
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    display: block;
+    margin: 0 auto 0 auto;
+}
+
+/*Doesnt seem to work*/
+/* ul.nav {
+    list-style-type: none;
+    background-color: blue;
+} */
+
+img {
+    border: none;
+}
+
+main {
+    max-width: 1000px;
+    display: block;
+    margin: auto;
+}
+
+body{
+    margin: 0 20px 0 20px;
+}
+
+table {
+    text-align: center;
+    margin: auto;
+}
+
+td.sleep {
+    background-color:#646373;
+}
+
+td.lecture {
+    background-color: #4287f5;
+}
+
+td.discussion {
+    background-color: #afc8f0;
+}
+
+td.studio {
+    background-color: #f0afaf;
+}
+
+td.radio-show {
+    background-color: #d9aff0;
+}
+
+.sched-header-day {
+    background-color: aquamarine;
+}
+
+tfoot.sched-foot {
+    background-color: white;
+}
+
+.weekend {
+    background-color: #f0afaf;
+}
+
+h3.index-h3 {
+    font-size: small;
+}
+
+main {
+    background-image: linear-gradient(to bottom right, rgb(187, 127, 127), white);
+    font-style: normal;
+}
+
+/****************************************** START HEADER *****************************************/
+/* Parent: body */
+header.header-container {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    /* background-color: antiquewhite; */
+}
+
+/*Name in header*/
+/* Parent: header id=index-header-container class=header-container */
+p.header-title { 
+    flex-grow: 1;
+    border: none;
+}
+
+p#externals-header-title {
+    font-family: 'Oswald', sans-serif;
+    /* background-color: aqua; */
+}
+
+p#externals-font-from-elsewhere {
+    font-family: 'Oswald', sans-serif;
+}
+
+/**************** NAV *****************/
+
+/* Parent: header id=index-header-container class=header-container */
+nav.page-nav {
+    border: none;
+    display: inline-block;
+    padding: 0;
+    flex-grow: -1;
+    /* background-color: cadetblue; */
+}
+
+/*Parent: nav id="index-header-internal-pages" class="page-nav"*/
+ul.page-nav-list {
+/* ul#index-header-nav-list { */
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border:none;
+    /* background-color: blue; */
+}
+
+li.page-nav-list-item {
+    padding: 10px 0;    /*This pairs with child */
+    border: none;
+    /* background-color: blueviolet; */
+}
+
+a.header-page-nav-list-item-link {
+    padding: inherit; /* This pairs with parent */
+    /* border: none; */
+    /* background-color: brown; */
+}
+
+a.footer-page-nav-list-item-link {
+    padding: inherit;
+}
+
+a.header-page-nav-list-item-link:hover { 
+    background-color: grey;
+}
+
+ul#index-footer-nav-list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/**************** NAV *****************/
+
+/****************************************** END HEADER *****************************************/
+
+/****************************************** START BODY *****************************************/
+img#index-self {
+    width: 30%;
+    height: 30%
+}
+
+/**************START EXTERNAL LINKS *************/
+nav.external-links {
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* background-color: aquamarine; */
+}
+
+ul#index-body-external-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* background-color: bisque; */
+}
+
+li.external-links-list-item {
+    padding: 0;
+    margin: 0;
+    border: none;
+    /* background-color: blue; */
+}
+
+a.external-links-list-item-link {
+    padding: 0;
+    margin: 0;
+    border: none;
+    /* background-color: brown; */
+}
+
+img.external-links-icons {
+    padding:0;
+    margin: 0;
+    /* border: 1px solid black; */
+}
+
+a.external-links-list-item-link:hover {
+    /* filter: invert(100%); */
+}
+/**************END EXTERNAL LINKS *************/
+
+/****************************************** END BODY *****************************************/
+
+
+/****************************************** START FOOTER *****************************************/
+
+
+
+/****************************************** END FOOTER *****************************************/
+
+/* TESTING FOR CSS ENABLED IN reporter.js */
+img#css-on-image {
+    width: 123456px;
+    height: 654321px;
+    visibility: hidden;
+}
+
+img.test-css-on { 
+    width: 123456px;
+    height: 654321px;
+    visibility: hidden;
+}
