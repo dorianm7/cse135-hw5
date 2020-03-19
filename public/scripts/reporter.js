@@ -1,3 +1,40 @@
+let auth = firebase.auth();
+const sessCookiesColl = 'sessCookies';
+const userDataColl = 'userData';
+
+let db = firebase.firestore();
+
+/****************Ex reading all from doc in db***************************/
+const consoleLogAllFrom = (docName) {
+    db.collection(docName).get()
+    .then( (querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        })
+    })
+    .catch((e) => {
+        console.log('Error message ' + e);
+    });
+};
+
+consoleLogAllFrom(userDataColl);
+/****************Ex reading all from doc in db***************************/
+
+/****************Ex writing to db.collection(docName) ***************************/
+//Values is going to be a key value pair string
+const addTo = (docName, values) => {
+    db.collection(docName).add(values)
+        .then(function(docRef) {
+            console.log('Document written with ID: ', docRef.id);
+        })
+        .catch(function(error) {
+            console.log('Error adding document: ', error);
+        })
+}
+
+addTo(userDataColl, {key: 'value'});
+/****************Ex writing to db.collection(docName) ***************************/
+
 //Javascript file used to collect all info from the user
 
 function loadHandler() {

@@ -1,4 +1,24 @@
 let auth = firebase.auth();
+const sessCookiesColl = 'sessCookies';
+const userDataColl = 'userData';
+
+// const firebase = require("firebase");
+// Required for side-effects
+// require("firebase/firestore");
+
+let db = firebase.firestore();
+
+//write something to the db to make sure it works
+//example of how to read from db
+db.collection(userDataColl).get()
+  .then( (querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+    })
+  })
+  .catch((e) => {
+    console.log('Error message ' + e);
+  });
 
 document.getElementById('loginBtn').addEventListener("click", (e) => {
     e.preventDefault();
@@ -29,3 +49,7 @@ const addPasswordFailText = (failText) => {
 const moveToDashboard = () => {
     window.location = '../dashboard.html';
 };
+
+
+//function to collect all of the users values and then send them to the firebase database
+  //here
