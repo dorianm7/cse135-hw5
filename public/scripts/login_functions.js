@@ -6,7 +6,6 @@ document.getElementById('loginBtn').addEventListener("click", (e) => {
     let uPassword = document.getElementById('password').value;
 
     signIn(uEmail, uPassword);
-  
 });
 
 const signIn = (email, password) => {
@@ -27,4 +26,6 @@ const addPasswordFailText = (failText) => {
 }
 
 
-const moveToDashboard = () => {window.location = '../dashboard.html';};
+const moveToDashboard = () => {
+    window.location = '../dashboard.html';
+};

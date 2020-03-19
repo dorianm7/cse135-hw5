@@ -6,21 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="./styles/dashboard.css">
+        <script src="https://cdn.zinggrid.com/zinggrid.min.js" defer></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
+
     <div class="container">
     <header>
         <nav class="main-nav">
             <h1 id="nav-greeting">Hello, </h1>
             <ul>
-                <li><a href="#">Browsers</a></li>
                 <li><a href="#">Speed</a></li>
+                <li><a href="#">Browsers</a></li>
                 <li><button id="logOutBtn">Log out</button></li>
             </ul>
         </nav>
     </header>
+    <div class="speed">
+        <h3>Speed</h3>
+        <zing-grid
+        caption="Speed Performance"
+        data='[{
+            "name": "Philip J. Fry",
+            "origin": "Earth"
+          },
+          {
+            "name": "Turanga Leela",
+            "origin": "Earth"
+          },
+          {
+            "name": "Bender Bending Rodriguez",
+            "origin": "Earth"
+          },
+          {
+            "name": "Amy Wong",
+            "origin": "Mars"
+          },
+          {
+            "name": "Doctor John Zoidberg",
+            "origin": "Decapod 10"
+          },
+          {
+            "name": "Lord Nibbler",
+            "origin": "Earth"
+          }
+        ]'>
+        </zing-grid>
     </div>
+    </div>
+    <div class="browsers">
+            <h3>Browsers</h3>
+            <div id="chart" style="width:100%; height:400px;"></div>
+
+        </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="/__/firebase/7.10.0/firebase-app.js"></script>
 
@@ -32,5 +71,39 @@
     <script src="/__/firebase/init.js"></script> 
 
     <script src="scripts/dashboard_functions.js"></script>
+    <script src="/js/highstock.js"></script>
+    <script src="/js/highmaps.js"></script>
+
+    <script src="/js/highcharts.js"></script>
+    <script src="/js/modules/stock.js"></script>
+    <script src="/js/modules/map.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var myChart = Highcharts.chart('chart', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Fruit Consumption'
+            },
+            xAxis: {
+                categories: ['Apples', 'Bananas', 'Oranges']
+            },
+            yAxis: {
+                title: {
+                    text: 'Fruit eaten'
+                }
+            },
+            series: [{
+                name: 'Jane',
+                data: [1, 0, 4]
+            }, {
+                name: 'John',
+                data: [5, 7, 3]
+            }]
+        });
+    });
+    </script>
 </body>
 </html>

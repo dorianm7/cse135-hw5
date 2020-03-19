@@ -7,7 +7,7 @@ let userEmail;
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-        //setUserRole(user, 'admin');
+        // setUserRole(user, 'admin');
         printUserProfile(user);
         updateGreetingText();
 
@@ -19,10 +19,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 const printUserProfile = (user) => {
     if(user != null){
         user.providerData.forEach(function (profile) {
-            console.log("Sign-in provider: " + profile.providerId);
-            console.log("  Provider-specific UID: " + profile.uid);
-            console.log("  Name: " + profile.displayName);
-            console.log("  Email: " + profile.email);
+            // console.log("Sign-in provider: " + profile.providerId);
+            // console.log("  Provider-specific UID: " + profile.uid);
+            // console.log("  Name: " + profile.displayName);
+            // console.log("  Email: " + profile.email);
             userRole = profile.displayName;
             userEmail = profile.email;
           });
@@ -38,18 +38,17 @@ const setUserRole = (user, roleType) => {
     }).then(function() {
         console.log('Successfully updated user role to ' + roleType);
     }).catch(function(e) {
-        console.log(e);
+        console.log('Unable to set userRole ' + e);
     })
 };
 
 const updateGreetingText = () => {
     let greetingEl = document.getElementById('nav-greeting');
     greetingEl.innerText = greetingEl.innerText + ' ' +  userEmail + ' (' + userRole + ')';
-    console.log(greetingEl.value);
 }
 
 const signout = () => {
-firebase.auth().signOut().then(function() {
+auth.signOut().then(function() {
     console.log('Signed Out');
     moveToLogIn();
   }, function(error) {
@@ -59,6 +58,10 @@ firebase.auth().signOut().then(function() {
 
 const moveToLogIn = () => {window.location = '../index.html';};
 
-logOutEl = document.getElementById('logOutBtn');
+const addElements = () => {
+let logOutEl = document.getElementById('logOutBtn');
 logOutEl.addEventListener('click', signout);
 
+};
+
+addElements();
