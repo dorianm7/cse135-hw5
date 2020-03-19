@@ -1,16 +1,16 @@
 let auth = firebase.auth();
-const sessCookiesColl = 'sessCookies';
-const userDataColl = 'userData';
+// const sessCookiesColl = 'sessCookies';
+// const userDataColl = 'userData';
 
 // const firebase = require("firebase");
 // Required for side-effects
 // require("firebase/firestore");
 
-let db = firebase.firestore();
+const db = firebase.firestore();
 
 //write something to the db to make sure it works
 //example of how to read from db
-db.collection(userDataColl).get()
+/*db.collection(userDataColl).get()
   .then( (querySnapshot) => {
     querySnapshot.forEach((doc) => {
       console.log(`${doc.id} => ${doc.data()}`);
@@ -18,7 +18,7 @@ db.collection(userDataColl).get()
   })
   .catch((e) => {
     console.log('Error message ' + e);
-  });
+  });*/
 
 document.getElementById('loginBtn').addEventListener("click", (e) => {
     e.preventDefault();

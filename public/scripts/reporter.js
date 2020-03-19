@@ -1,11 +1,12 @@
-let auth = firebase.auth();
+
+//let auth = firebase.auth();
 const sessCookiesColl = 'sessCookies';
 const userDataColl = 'userData';
 
-let db = firebase.firestore();
+// const db = firebase.firestore();
 
 /****************Ex reading all from doc in db***************************/
-const consoleLogAllFrom = (docName) {
+/*const consoleLogAllFrom = (docName) {
     db.collection(docName).get()
     .then( (querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -16,23 +17,72 @@ const consoleLogAllFrom = (docName) {
         console.log('Error message ' + e);
     });
 };
+consoleLogAllFrom(userDataColl);*/
+let allValues = {
+    userAgent: navigator.userAgent,
+    userLang: navigator.language,
+    userCookie: navigator.cookieEnabled,
+    // javascript: reportJavascriptOn(),
+    // image: reportImagesOn(),
+    // css: reportCSSOn(),
+    dim: reportAvailableScreenDimensions(),
+    windowSize: reportWindowSize(),
+    connection: navigator.connection.effectiveType,
+    navStart: performance.timing.navigationStart,
+    unloadEventStart: performance.timing.unloadEventStart,
+    unloadEventEnd: performance.timing.unloadEventEnd,
+    redirectStart: performance.timing.redirectStart,
+    redirectEnd: performance.timing.redirectEnd,
+    fetchStart: performance.timing.fetchStart,
+    domainLookUpStart: performance.timing.domainLookupStart,
+    domainLookupEnd: performance.timing.domainLookupEnd,
+    connectStart: performance.timing.connectStart,
+    conectEnd: performance.timing.connectEnd,
+    secureConnectionStart: performance.timing.secureConnectionStart,
+    reuestStart: performance.timing.requestStart,
+    responseStart: performance.timing.responseStart,
+    responseEnd: performance.timing.responseEnd,
+    domLoading: performance.timing.domLoading,
+    domInteractive: performance.timing.domInteractive,
+    ontentLoadEventStart: performance.timing.domContentLoadedEventStart,
+    contentLoadedEventEnd: performance.timing.domContentLoadedEventEnd,
+    loadEventStart: performance.timing.loadEventStart,
+    loadEventEnd: performance.timing.loadEventEnd
+}
 
-consoleLogAllFrom(userDataColl);
 /****************Ex reading all from doc in db***************************/
 
 /****************Ex writing to db.collection(docName) ***************************/
 //Values is going to be a key value pair string
-const addTo = (docName, values) => {
-    db.collection(docName).add(values)
-        .then(function(docRef) {
-            console.log('Document written with ID: ', docRef.id);
-        })
+const addTo = (collName, docName, values) => {
+    firebase.firestore().collection(collName).doc(docName).set(values)
+        .then(console.log('Successfully added ' + docName + '\'s data to the database.'))
         .catch(function(error) {
             console.log('Error adding document: ', error);
         })
 }
 
-addTo(userDataColl, {key: 'value'});
+let kvObj = {userLang   : 'value',
+        cookiesOn   : false,
+        jsOn        : false,
+        imgOn       : false,
+        cssOn       : false,
+        availScreenDim: [123, 321],
+        windowSize  : [123,321]};
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // User is signed in.
+        let email = auth.currentUser.email;
+        addTo(userDataColl, email, allValues);
+    } else {
+        // No user is signed in.
+    }
+});
+    
+
+// addTo(userDataColl, allValues);
+
 /****************Ex writing to db.collection(docName) ***************************/
 
 //Javascript file used to collect all info from the user
@@ -57,18 +107,6 @@ function loadHandler() {
 
 
 //WRITE THE FUNCTIONS TO DO WHAT YOU WANT TO DO
-
-// function pageNavClickAction(e) {
-//     console.log("Inside pageNavClickAction");
-//     let clickedId = e.target.value;
-
-//     console.log(clickedId + " was clicked!");   
-// }
-
-// function headerTitleListener(e) {
-//     let clickedId = e.target.id;
-//     console.log("Clicky my name: " + clickedId);
-// }
 
 function attachPurgeButton(){
     let urlReportedFrom = window.location.href;
@@ -96,37 +134,6 @@ function reportStaticData() {
     reportEffectiveConnectionType();
 }
 
-let allValues = {
-    userAgent: navigator.userAgent,
-    userLang: navigator.language,
-    userCookie: navigator.cookieEnabled,
-    javascript: reportJavascriptOn(),
-    image: reportImagesOn(),
-    css: reportCSSOn(),
-    dim: reportAvailableScreenDimensions(),
-    windowSize: reportWindowSize(),
-    connection: navigator.connection.effectiveType,
-    navStart: performance.timing.navigationStart,
-    unloadEventStart: performance.timing.unloadEventStart,
-    unloadEventEnd: performance.timing.unloadEventEnd,
-    redirectStart: performance.timing.redirectStart,
-    redirectEnd: performance.timing.redirectEnd,
-    fetchStart: performance.timing.fetchStart,
-    domainLookUpStart: performance.timing.domainLookupStart,
-    domainLookupEnd: performance.timing.domainLookupEnd,
-    connectStart: performance.timing.connectStart,
-    conectEnd: performance.timing.connectEnd,
-    secureConnectionStart: performance.timing.secureConnectionStart,
-    reuestStart: performance.timing.requestStart,
-    responseStart: performance.timing.responseStart,
-    responseEnd: performance.timing.responseEnd,
-    domLoading: performance.timing.domLoading,
-    domInteractive: performance.timing.domInteractive,
-    ontentLoadEventStart: performance.timing.domContentLoadedEventStart,
-    contentLoadedEventEnd: performance.timing.domContentLoadedEventEnd,
-    loadEventStart: performance.timing.loadEventStart,
-    loadEventEnd: performance.timing.loadEventEnd
-}
 
 
 
@@ -212,7 +219,7 @@ function reportCookiesOn() {
 }
 
 function reportJavascriptOn() {
-    let noScriptPEl = document.querySelector('.test-js-on-p');
+/*    let noScriptPEl = document.querySelector('.test-js-on-p');
 
     let timeReported = new Date().toTimeString();
     let urlReportedFrom = window.location.href;
@@ -245,10 +252,10 @@ function reportJavascriptOn() {
     window.localStorage.setItem('javascriptOn', JSON.stringify(javascriptOnObj));
 
     return enabled;
-}
+*/}
 
 function reportImagesOn() {
-    let imagesOnImageEl = document.querySelector('.test-image-on');
+/*    let imagesOnImageEl = document.querySelector('.test-image-on');
     let timeReported = new Date().toTimeString();
     let urlReportedFrom = window.location.href;
     let enabled = imagesOnImageEl.naturalWidth > 0 ? true : false;
@@ -276,11 +283,11 @@ function reportImagesOn() {
 
     window.localStorage.setItem('imagesOn', JSON.stringify(imagesOnObj));
 
-    return enabled;
+    return enabled;*/
 }
 
 function reportCSSOn(){
-
+/*
     let timeReported = new Date().toTimeString();
     let urlReportedFrom = window.location.href;
 
@@ -307,7 +314,7 @@ function reportCSSOn(){
         urlAcquired : urlReportedFrom
     }
 
-    window.localStorage.setItem('cssOn', JSON.stringify(cssOnObj));
+    window.localStorage.setItem('cssOn', JSON.stringify(cssOnObj));*/
 }
 
 function reportAvailableScreenDimensions() {
